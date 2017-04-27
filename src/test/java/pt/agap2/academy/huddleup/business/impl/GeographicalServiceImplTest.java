@@ -8,10 +8,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import pt.agap2.academy.huddleup.business.interfaces.GeographicalService;
-import pt.agap2.academy.huddleup.configs.BusinessConfiguration;
+import pt.agap2.academy.huddleup.configs.TestConfiguration;
+import pt.agap2.academy.huddleup.model.Location;
 
 @RunWith(SpringJUnit4ClassRunner.class )
-@ContextConfiguration( classes=BusinessConfiguration.class )
+@ContextConfiguration( classes=TestConfiguration.class )
 public class GeographicalServiceImplTest {
 	
 	@Autowired
@@ -22,6 +23,14 @@ public class GeographicalServiceImplTest {
 	public void getGeographicalEvent(){
 		
 		
-		Assert.assertNotNull( this.geoService.getEventsNearby(0.0F, 0.0F, 100) );	
+		Assert.assertNotNull( this.geoService.getEventsNearby(new Location(0.0F,0.0F), 100) );	
+	}
+	
+	@Test
+	public void testGetNearbyEvents(){
+		
+		// TODO Implement the test
+		
+
 	}
 }

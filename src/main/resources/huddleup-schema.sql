@@ -1,0 +1,53 @@
+CREATE DATABASE IF NOT EXISTS HUDDLEUP;
+USE HUDDLEUP;
+
+DROP TABLE IF EXISTS APPLICATION;
+DROP TABLE IF EXISTS EVENT;
+DROP TABLE IF EXISTS USER;
+
+
+CREATE TABLE USER (
+	id BIGINT(20) NOT NULL AUTO_INCREMENT,
+    created_date DATETIME DEFAULT NOW(),
+    last_modified_date DATETIME DEFAULT NOW(),
+    is_deleted BIT(1) NOT NULL,
+    full_name VARCHAR(150) NOT NULL,
+    birth_date DATETIME NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    user_password VARCHAR(150) NOT NULL,
+    rate DOUBLE NOT NULL DEFAULT 0,
+    rate_count BIGINT(20) NOT NULL DEFAULT 0,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE EVENT (
+	id BIGINT(20) NOT NULL AUTO_INCREMENT,
+	created_date DATETIME DEFAULT NOW(),
+    last_modified_date DATETIME DEFAULT NOW(),
+    is_deleted BIT(1) NOT NULL,
+    requirements VARCHAR(100),
+    event_name VARCHAR(100) NOT NULL,
+    event_type VARCHAR(100) NOT NULL,
+    photo VARCHAR(100),
+    description VARCHAR(200) NOT NULL,
+    host_id BIGINT(20) NOT NULL,
+    event_date DATETIME NOT NULL,
+    address VARCHAR(150) NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    max_att INT,
+    latitude FLOAT NOT NULL,
+    longitude FLOAT NOT NULL,
+	PRIMARY KEY (id),
+    FOREIGN KEY (host_id) REFERENCES USER (id)
+);
+
+CREATE TABLE APPLICATION (
+	id BIGINT(20) NOT NULL AUTO_INCREMENT,
+	user_id BIGINT(20) NOT NULL,
+    event_id BIGINT(20) NOT NULL,
+    accepted BIT(1),
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES USER (id),
+    FOREIGN KEY (event_id) REFERENCES EVENT (id),
+    UNIQUE(user_id,event_id)
+)
