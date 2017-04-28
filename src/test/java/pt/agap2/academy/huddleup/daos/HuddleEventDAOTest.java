@@ -26,21 +26,42 @@ public class HuddleEventDAOTest {
 	@Autowired
 	private UserDAO userDao;
 	
-	public static HuddleEvent getDemoHuddleEvent(User existentUser){
+	public static HuddleEvent getDemoLisbonHuddleEvent(User existentUser){
 		
 		HuddleEvent event = new HuddleEvent();
 		event.setAddress("Rua  das Pretas");
-		event.setCity("Porto");
-		event.setDescription("Great Event");
+		event.setCity("Lisboa");
+		event.setDescription("Great Lisbon Event");
 		event.setEventDate(new  Date());
 		event.setEventName("Mega party");
 		event.setEventType("Party");
 		event.setHost( existentUser );
 		event.setIsDeleted(false);
-		event.setLocation( new Location(34.0f,35.4f) );
+		event.setLocation( new Location(38.7223f,9.1393f) );
 		event.setMaxAtt(10);
 		event.setPhoto(null);
 		event.setRequirements("Drinks");
+		
+		return event;
+	}
+	
+	
+	public static HuddleEvent getDemoPortoHuddleEvent(User existentUser){
+
+		
+		HuddleEvent event = new HuddleEvent();
+		event.setAddress("Avenida da liberdade" );
+		event.setCity("Porto");
+		event.setDescription("Great Porto Event");
+		event.setEventDate(new  Date());
+		event.setEventName("Mega party");
+		event.setEventType("Party");
+		event.setHost( existentUser );
+		event.setIsDeleted(false);
+		event.setLocation( new Location(41.1579f,8.6291f) );
+		event.setMaxAtt(10);
+		event.setPhoto(null);
+		event.setRequirements("Drinks and dank w33d");
 		
 		return event;
 	}
@@ -57,9 +78,14 @@ public class HuddleEventDAOTest {
 		User  user = UserDAOTest.getDemoUser();
 		this.userDao.save(user);
 		
-		HuddleEvent event = getDemoHuddleEvent(user);
-		
+		HuddleEvent event = getDemoLisbonHuddleEvent(user);
 		this.huddleEventDao.save(event);
+			
+		this.huddleEventDao.save(getDemoPortoHuddleEvent(user));
+		this.huddleEventDao.save(getDemoPortoHuddleEvent(user));
+		this.huddleEventDao.save(getDemoPortoHuddleEvent(user));
+		this.huddleEventDao.save(getDemoPortoHuddleEvent(user));
+		this.huddleEventDao.save(getDemoPortoHuddleEvent(user));
 		
 		// test if the  event was inserted
 		Assert.assertNotNull( this.huddleEventDao.findOne(event.getId()) );
@@ -71,7 +97,7 @@ public class HuddleEventDAOTest {
 		
 		User  user = UserDAOTest.getDemoUser();
 		this.userDao.save(user);
-		HuddleEvent event = getDemoHuddleEvent(user);
+		HuddleEvent event = getDemoLisbonHuddleEvent(user);
 		event.setCity( "abrantes" );
 		this.huddleEventDao.save(event);
 		

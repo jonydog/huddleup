@@ -28,7 +28,7 @@ public class UserDAOTest {
 		user.setIsDeleted(false);
 		user.setRate(0.0);
 		user.setRateCount(0L);
-		user.setUserPassword("tralala");
+		user.setUserPassword("youtouchmytralala");
 		return user;
 	}
 	
