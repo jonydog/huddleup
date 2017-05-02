@@ -37,7 +37,7 @@ public class HuddleEventDAOTest {
 		event.setEventType("Party");
 		event.setHost( existentUser );
 		event.setIsDeleted(false);
-		event.setLocation( new Location(38.7223f,9.1393f) );
+		event.setLocation( new Location(38.7223f,-9.1393f) );
 		event.setMaxAtt(10);
 		event.setPhoto(null);
 		event.setRequirements("Drinks");
@@ -58,7 +58,7 @@ public class HuddleEventDAOTest {
 		event.setEventType("Party");
 		event.setHost( existentUser );
 		event.setIsDeleted(false);
-		event.setLocation( new Location(41.1579f,8.6291f) );
+		event.setLocation( new Location(41.1579f,-8.6291f) );
 		event.setMaxAtt(10);
 		event.setPhoto(null);
 		event.setRequirements("Drinks and dank w33d");

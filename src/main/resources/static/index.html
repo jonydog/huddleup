@@ -64,7 +64,7 @@
 			var long = location.longitude;
 			var radius = location.radius;
 			
-			$.ajax("/events/nearby?lat=" + lat + "&long=" + long + "&radius=" + radius).success(
+			$.ajax("/events/nearby?lat=" + lat + "&long=" + long ).success(
 				function(object){
 					$('#nearbyList').empty();
 					for(var i=0; i<object.length; i++){

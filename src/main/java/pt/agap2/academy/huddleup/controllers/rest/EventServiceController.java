@@ -20,11 +20,11 @@ public class EventServiceController {
 	private GeographicalService geographicalService;
 	
 	@GetMapping("/nearby")
-	public List<HuddleEvent> getNearbyEvents(@RequestParam("lat") Float latitude, @RequestParam("long") Float longitude, @RequestParam("radius") Float radius ){
+	public List<HuddleEvent> getNearbyEvents(@RequestParam("lat") Float latitude, @RequestParam("long") Float longitude ){
 	
 		
 		
-		return this.geographicalService.getEventsNearby(new Location(latitude, longitude), radius);
+		return this.geographicalService.getEventsNearby(new Location(latitude, longitude), 100);
 	}
 
 }
