@@ -20,5 +20,7 @@ public class Location {
 	
 	@NotNull
 	private Float longitude;
+
+
 	
 }

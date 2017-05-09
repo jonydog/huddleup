@@ -23,7 +23,7 @@ public class GeographicalServiceImplTest {
 	public void getGeographicalEvent(){
 		
 		
-		Assert.assertNotNull( this.geoService.getEventsNearby(new Location(0.0F,0.0F), 100) );	
+		Assert.assertNotNull( this.geoService.getEventsNearby(new Location(0.0F,0.0F),100 ));	
 	}
 	
 	@Test
