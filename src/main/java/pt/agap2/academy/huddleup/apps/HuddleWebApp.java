@@ -18,9 +18,6 @@ public class HuddleWebApp {
 
 	public static void main(String[] args){
 		
-		ApplicationContext ctx = SpringApplication.run(HuddleWebApp.class, args);
-		
-	
+		ApplicationContext ctx = SpringApplication.run(HuddleWebApp.class, args);		
 	}
-	
 }

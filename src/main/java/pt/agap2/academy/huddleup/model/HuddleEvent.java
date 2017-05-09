@@ -14,7 +14,6 @@ import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import pt.agap2.academy.huddleup.lixo.ForbbidenTerms;
 
 @Getter
 @Setter
@@ -28,7 +27,7 @@ public class HuddleEvent extends HuddleupHeader{
 	
 	private String requirements;
 	
-	@ForbbidenTerms(forbiddenTerms={"drogas","heroina","snuff"})
+
 	private String eventName;
 	
 	private String eventType;

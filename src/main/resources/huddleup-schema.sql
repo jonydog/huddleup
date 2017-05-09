@@ -27,7 +27,7 @@ CREATE TABLE EVENT (
     is_deleted BIT(1) NOT NULL,
     requirements VARCHAR(100),
     event_name VARCHAR(100) NOT NULL,
-    event_type VARCHAR(100) NOT NULL,
+    event_type VARCHAR(100) NOT NULL,event
     photo VARCHAR(100),
     description VARCHAR(200) NOT NULL,
     host_id BIGINT(20) NOT NULL,

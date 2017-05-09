@@ -2,6 +2,8 @@ package pt.agap2.academy.huddleup.business.interfaces;
 
 import java.util.List;
 
+import org.springframework.validation.Errors;
+
 import pt.agap2.academy.huddleup.model.HuddleEvent;
 import pt.agap2.academy.huddleup.model.Location;
 

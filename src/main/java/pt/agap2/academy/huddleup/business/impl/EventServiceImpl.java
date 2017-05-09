@@ -16,7 +16,8 @@ public class EventServiceImpl implements  EventService{
 	
 
 	@Override
-	public EventDetails getEventDetailsByEventId(Long eventId,Errors errors) {
+	public EventDetails getEventDetailsByEventId(Long eventId) {
+		
 		
 		return this.huddleEventDao.findEventDetailsById(eventId);
 	}
