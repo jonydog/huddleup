@@ -40,15 +40,15 @@ public class EventDetailsController {
 	public List<EventDetails> getAllEventDetails(
 			@RequestParam("page") Integer page, 
 			@RequestParam("limit") Integer limit,
-			@RequestParam(value="sort",  required=false )  String field,
-			@RequestParam(value="by",  required=false) String sortby )
+			@RequestParam(value="sort")  String field,
+			@RequestParam(value="by") String sortby )
 	{
 		
 		Pageable p = new  PageRequest(
 						page,
 						limit, 
-						new Sort( sortby.equals("desc") ? Direction.DESC : Direction.ASC ,  field )  
-						);
+						new Sort( sortby.equals("desc") ? Direction.DESC : Direction.ASC ,  field ) );
+		
 		return this.eventDao.findAllEventDetails(p);
 	}
 	

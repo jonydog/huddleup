@@ -22,9 +22,8 @@ public class HorusErrors {
 	@JsonIgnore
 	ResourceBundle resources;
 	
-	public  HorusErrors(Locale locale){	
+	public HorusErrors(Locale locale){	
 		this.resources = ResourceBundle.getBundle("errormessages/socialactions-errors", locale );
-		
 	}
 	
 	public Boolean hasErrors(){

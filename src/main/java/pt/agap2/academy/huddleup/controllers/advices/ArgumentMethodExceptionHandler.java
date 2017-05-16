@@ -23,6 +23,4 @@ public class ArgumentMethodExceptionHandler extends ResponseEntityExceptionHandl
         return this.handleExceptionInternal(ex, errors, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
     }
     
-    
-    
 }
